@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faTruck, 
+  faShieldAlt, 
+  faUndo, 
+  faHeadset,
+  faStar
+} from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 import { fetchProducts } from '../utils/api';
 import { useCart } from '../context/CartContext';
@@ -97,16 +105,14 @@ const Home = () => {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6 lg:mt-8">
             {[
-              { icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4', title: 'Free Shipping', desc: 'Orders $50+', color: 'blue' },
-              { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Secure Pay', desc: '100% secure', color: 'green' },
-              { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', title: 'Easy Returns', desc: '30 days', color: 'purple' },
-              { icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z', title: '24/7 Support', desc: 'Always here', color: 'orange' }
+              { icon: faTruck, title: 'Free Shipping', desc: 'Orders $50+', color: 'blue' },
+              { icon: faShieldAlt, title: 'Secure Pay', desc: '100% secure', color: 'green' },
+              { icon: faUndo, title: 'Easy Returns', desc: '30 days', color: 'purple' },
+              { icon: faHeadset, title: '24/7 Support', desc: 'Always here', color: 'orange' }
             ].map((feature, idx) => (
               <div key={idx} className="bg-white p-3 sm:p-4 rounded-lg border border-gray-200 flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left">
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-${feature.color}-100 rounded-full flex items-center justify-center flex-shrink-0`}>
-                  <svg className={`w-5 h-5 sm:w-6 sm:h-6 text-${feature.color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
-                  </svg>
+                  <FontAwesomeIcon icon={feature.icon} className={`w-5 h-5 sm:w-6 sm:h-6 text-${feature.color}-600`} />
                 </div>
                 <div className="min-w-0">
                   <div className="font-semibold text-gray-900 text-xs sm:text-sm lg:text-base">{feature.title}</div>
@@ -168,7 +174,7 @@ const Home = () => {
                         </span>
                         {product.rating && (
                           <div className="flex items-center gap-1">
-                            <span className="text-yellow-400 text-sm">★</span>
+                            <FontAwesomeIcon icon={faStar} className="text-yellow-400 w-3.5 h-3.5" />
                             <span className="text-xs font-medium text-gray-600">{product.rating.rate}</span>
                           </div>
                         )}

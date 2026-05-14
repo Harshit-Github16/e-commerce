@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 import { fetchProductById } from '../utils/api';
 import { useCart } from '../context/CartContext';
@@ -90,7 +92,7 @@ const ProductDetail = () => {
             {product.rating && (
               <div className="flex items-center space-x-2 mb-4">
                 <div className="flex items-center space-x-1">
-                  <span className="text-yellow-400 text-xl">★</span>
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-400 w-5 h-5" />
                   <span className="font-semibold">{product.rating.rate}</span>
                 </div>
                 <span className="text-gray-500">({product.rating.count} reviews)</span>

@@ -1,5 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faShoppingBag, 
+  faTimes, 
+  faMinus, 
+  faPlus,
+  faShieldAlt
+} from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '../context/CartContext';
 
 const Cart = () => {
@@ -42,9 +50,7 @@ const Cart = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           <div className="mb-6">
-            <svg className="mx-auto h-24 w-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
+            <FontAwesomeIcon icon={faShoppingBag} className="mx-auto h-24 w-24 text-gray-400" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
           <p className="text-gray-600 mb-6">Start shopping to add items to your cart</p>
@@ -92,23 +98,21 @@ const Cart = () => {
                     onClick={() => removeFromCart(item.id)}
                     className="text-gray-400 hover:text-red-500 transition-colors"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <FontAwesomeIcon icon={faTimes} className="w-5 h-5" />
                   </button>
                   <div className="flex items-center space-x-3 bg-gray-100 rounded-lg px-3 py-1">
                     <button
                       onClick={() => removeFromCart(item.id)}
                       className="text-gray-600 hover:text-gray-900 font-bold"
                     >
-                      −
+                      <FontAwesomeIcon icon={faMinus} className="w-3 h-3" />
                     </button>
                     <span className="font-semibold w-8 text-center">{item.quantity}</span>
                     <button
                       onClick={() => addToCart(item)}
                       className="text-gray-600 hover:text-gray-900 font-bold"
                     >
-                      +
+                      <FontAwesomeIcon icon={faPlus} className="w-3 h-3" />
                     </button>
                   </div>
                 </div>
@@ -164,9 +168,7 @@ const Cart = () => {
                 onClick={() => setShowCheckoutModal(false)}
                 className="text-gray-400 hover:text-gray-600 transition-colors"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <FontAwesomeIcon icon={faTimes} className="w-6 h-6" />
               </button>
             </div>
 
@@ -393,9 +395,7 @@ const Cart = () => {
                       {/* Security Badge */}
                       <div className="bg-white bg-opacity-10 rounded-lg p-3 mb-6">
                         <div className="flex items-center gap-2 text-xs">
-                          <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
+                          <FontAwesomeIcon icon={faShieldAlt} className="w-4 h-4 text-green-400" />
                           <span className="text-gray-300">Secure SSL encrypted payment</span>
                         </div>
                       </div>

@@ -1,5 +1,15 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faBars, 
+  faShoppingBag, 
+  faSearch, 
+  faUser, 
+  faPhone, 
+  faEnvelope,
+  faGift
+} from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '../context/CartContext';
 
 const Header = () => {
@@ -26,11 +36,11 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-10 text-xs">
             <div className="flex items-center gap-4">
-              <span>📞 +1 (555) 123-4567</span>
-              <span>✉️ support@shopnova.com</span>
+              <span><FontAwesomeIcon icon={faPhone} className="mr-1 w-3 h-3" /> +91-9876598767</span>
+              <span><FontAwesomeIcon icon={faEnvelope} className="mr-1 w-3 h-3" /> support@shopnova.com</span>
             </div>
             <div className="flex items-center gap-4">
-              <span>🎉 Free Shipping on Orders Over $50!</span>
+              <span><FontAwesomeIcon icon={faGift} className="mr-1 w-3 h-3" /> Free Shipping on Orders Over $50!</span>
             </div>
           </div>
         </div>
@@ -45,17 +55,13 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-gray-700 p-2"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
             </button>
 
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
               <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 rounded flex items-center justify-center">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
+                <FontAwesomeIcon icon={faShoppingBag} className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
               <span className="text-lg md:text-xl font-bold text-gray-900">
                 Shop<span className="text-blue-600">Nova</span>
@@ -76,9 +82,7 @@ const Header = () => {
                   type="submit" 
                   className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1.5 rounded-md hover:bg-blue-700 transition-colors"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                  <FontAwesomeIcon icon={faSearch} className="w-4 h-4" />
                 </button>
               </div>
             </form>
@@ -90,25 +94,19 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden text-gray-700"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+                <FontAwesomeIcon icon={faSearch} className="w-6 h-6" />
               </button>
 
               {/* Account - Desktop */}
               <Link to="/" className="hidden lg:flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
+                <FontAwesomeIcon icon={faUser} className="w-5 h-5" />
                 <span className="text-sm font-medium">Account</span>
               </Link>
 
               {/* Cart */}
               <Link to="/cart" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors" data-testid="cart-icon">
                 <div className="relative">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
+                  <FontAwesomeIcon icon={faShoppingBag} className="w-6 h-6" />
                   {totalItems > 0 && (
                     <span 
                       className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
@@ -146,9 +144,7 @@ const Header = () => {
                   type="submit" 
                   className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-3 py-1.5 rounded-md"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                  <FontAwesomeIcon icon={faSearch} className="w-4 h-4" />
                 </button>
               </div>
             </form>

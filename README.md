@@ -2,11 +2,11 @@
 
 A modern, responsive e-commerce web application built with React, featuring product browsing, cart management, and a complete checkout flow.
 
-## 🔗 Repository
+##  Repository
 
 **GitHub**: [https://github.com/Harshit-Github16/e-commerce](https://github.com/Harshit-Github16/e-commerce)
 
-## 🚀 Live Demo
+## Live Demo
 
 [Add your deployed link here after deployment]
 
@@ -23,7 +23,7 @@ A modern, responsive e-commerce web application built with React, featuring prod
 - [Additional Features](#additional-features)
 - [Browser Support](#browser-support)
 
-## ✨ Features
+##  Features
 
 ### Core Features
 - **Product Listing**: Browse products with pagination support
@@ -51,7 +51,7 @@ A modern, responsive e-commerce web application built with React, featuring prod
 - **Package Manager**: pnpm 11.1.1
 - **Build Tool**: React Scripts 5.0.1
 
-## 📦 Prerequisites
+##  Prerequisites
 
 Before running this application, make sure you have the following installed:
 
@@ -159,7 +159,7 @@ ecommerce-app/
 └── README.md
 ```
 
-## 🔌 API Integration
+##  API Integration
 
 The application integrates with the [Fake Store API](https://fakestoreapi.com):
 
@@ -173,7 +173,7 @@ The application integrates with the [Fake Store API](https://fakestoreapi.com):
 - `fetchProductById(id)` - Get product by ID
 - `fetchCategories()` - Get all categories
 
-## 📝 Assumptions & Limitations
+##  Assumptions & Limitations
 
 ### Assumptions:
 1. **Payment Processing**: Checkout form is for demonstration only; no actual payment processing
@@ -194,7 +194,7 @@ The application integrates with the [Fake Store API](https://fakestoreapi.com):
 - Product images from API may occasionally fail to load
 - Pagination resets when applying search filters
 
-## 🎯 Additional Features Implemented
+##  Additional Features Implemented
 
 Beyond the basic requirements, the following features were added:
 
@@ -237,7 +237,7 @@ Beyond the basic requirements, the following features were added:
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Port Already in Use
 If port 3000 is already in use:
@@ -277,11 +277,11 @@ Builds the app for production to the `build` folder
 ### `pnpm test`
 Launches the test runner in interactive watch mode
 
-## 📄 License
+##  License
 
 This project is created for educational purposes.
 
-## 👨‍💻 Development Notes
+##  Development Notes
 
 - Code follows React best practices and hooks guidelines
 - ESLint warnings have been addressed
@@ -290,7 +290,7 @@ This project is created for educational purposes.
 - State management uses Context API for simplicity
 - Package manager: pnpm for faster, more efficient dependency management
 
-## 🤝 Contributing
+##  Contributing
 
 This is a demonstration project. For any issues or suggestions, please create an issue in the repository.
 
