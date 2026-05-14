@@ -14,6 +14,12 @@ const ProductDetail = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const loadProduct = async () => {
+      setLoading(true);
+      const data = await fetchProductById(id);
+      setProduct(data);
+      setLoading(false);
+    };
     loadProduct();
   }, [id]);
 
@@ -26,13 +32,6 @@ const ProductDetail = () => {
       );
     }
   }, [product]);
-
-  const loadProduct = async () => {
-    setLoading(true);
-    const data = await fetchProductById(id);
-    setProduct(data);
-    setLoading(false);
-  };
 
   const handleAddToCart = () => {
     if (product) {
