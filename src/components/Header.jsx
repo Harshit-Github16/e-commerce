@@ -31,7 +31,6 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      {/* Top Bar - Hidden on mobile */}
       <div className="bg-gray-900 text-white hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-10 text-xs">
@@ -46,11 +45,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Header */}
       <div className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 md:h-16 gap-3 md:gap-6">
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-gray-700 p-2"
@@ -58,7 +55,6 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
             </button>
 
-            {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
               <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 rounded flex items-center justify-center">
                 <FontAwesomeIcon icon={faShoppingBag} className="w-4 h-4 md:w-5 md:h-5 text-white" />
@@ -68,7 +64,6 @@ const Header = () => {
               </span>
             </Link>
 
-            {/* Search Bar - Desktop */}
             <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-2xl">
               <div className="relative w-full">
                 <input
@@ -87,9 +82,7 @@ const Header = () => {
               </div>
             </form>
 
-            {/* Right Side */}
             <div className="flex items-center gap-3 md:gap-6">
-              {/* Search Icon - Mobile */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden text-gray-700"
@@ -97,13 +90,11 @@ const Header = () => {
                 <FontAwesomeIcon icon={faSearch} className="w-6 h-6" />
               </button>
 
-              {/* Account - Desktop */}
               <Link to="/" className="hidden lg:flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
                 <FontAwesomeIcon icon={faUser} className="w-5 h-5" />
                 <span className="text-sm font-medium">Account</span>
               </Link>
 
-              {/* Cart */}
               <Link to="/cart" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors" data-testid="cart-icon">
                 <div className="relative">
                   <FontAwesomeIcon icon={faShoppingBag} className="w-6 h-6" />
@@ -126,11 +117,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-gray-200 bg-white">
           <div className="px-4 py-3 space-y-3">
-            {/* Mobile Search */}
             <form onSubmit={handleSearch}>
               <div className="relative">
                 <input
@@ -149,7 +138,6 @@ const Header = () => {
               </div>
             </form>
 
-            {/* Mobile Navigation */}
             <nav className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
               <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-blue-600 py-2 font-medium">
                 All Products

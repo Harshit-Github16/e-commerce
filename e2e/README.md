@@ -47,7 +47,6 @@ import { test, expect } from '@playwright/test';
 test.describe('Feature Name', () => {
   test('should do something', async ({ page }) => {
     await page.goto('/');
-    // Your test code here
   });
 });
 ```

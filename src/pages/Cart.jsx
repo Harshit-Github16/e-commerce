@@ -154,11 +154,9 @@ const Cart = () => {
         </div>
       </div>
 
-      {/* Checkout Modal */}
       {showCheckoutModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-xl">
-            {/* Modal Header */}
             <div className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900">Checkout</h2>
@@ -175,9 +173,7 @@ const Cart = () => {
             <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
               <form onSubmit={handleCheckout} className="p-6">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  {/* Left Column - Forms */}
                   <div className="lg:col-span-2 space-y-6">
-                    {/* Contact Information */}
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -226,7 +222,6 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    {/* Shipping Address */}
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">Shipping Address</h3>
                       <div className="grid grid-cols-1 gap-4">
@@ -291,7 +286,6 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    {/* Payment Information */}
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Details</h3>
                       <div className="grid grid-cols-1 gap-4">
@@ -346,12 +340,10 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  {/* Right Column - Order Summary */}
                   <div className="lg:col-span-1">
                     <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white sticky top-0">
                       <h3 className="text-xl font-bold mb-6">Order Summary</h3>
                       
-                      {/* Cart Items Preview */}
                       <div className="space-y-3 mb-6 max-h-48 overflow-y-auto">
                         {cartItems.slice(0, 3).map(item => (
                           <div key={item.id} className="flex gap-3 bg-white bg-opacity-10 rounded-lg p-3">
@@ -372,7 +364,6 @@ const Cart = () => {
                         )}
                       </div>
 
-                      {/* Price Breakdown */}
                       <div className="space-y-3 border-t border-gray-700 pt-4 mb-6">
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-300">Subtotal ({totalItems} items)</span>
@@ -392,7 +383,6 @@ const Cart = () => {
                         </div>
                       </div>
 
-                      {/* Security Badge */}
                       <div className="bg-white bg-opacity-10 rounded-lg p-3 mb-6">
                         <div className="flex items-center gap-2 text-xs">
                           <FontAwesomeIcon icon={faShieldAlt} className="w-4 h-4 text-green-400" />
@@ -400,7 +390,6 @@ const Cart = () => {
                         </div>
                       </div>
 
-                      {/* Action Buttons */}
                       <div className="space-y-3">
                         <button
                           type="submit"
